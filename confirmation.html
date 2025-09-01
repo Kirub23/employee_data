@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submitted | Lemi National Cement PLC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .confirmation-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .confirmation-icon {
+            font-size: 80px;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: #7f8c8d;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        .confirmation-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .company-logo {
+            max-width: 180px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .confirmation-container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <img src="logo.PNG" alt="Lemi National Cement PLC" class="company-logo">
+        
+        <div class="confirmation-icon">✓</div>
+        
+        <h1>Information Successfully Submitted</h1>
+        <h3>Thank you!</h3>
+        
+        <div class="confirmation-details">
+            <ul>
+                <li>Our HR team will review your information</li>
+            </ul>
+            <p><strong>Reference:</strong> #LNCP-<span id="reference-number"></span></p>
+        </div>
+        
+        
+        
+        <a href="https://www.leminationalcementplc.com" class="btn">Return to Our Website</a>
+        
+        <a href="index.html" class="btn">Submit Another application</a>
+        <div class="contact-info">
+
+        <p>For any inquiries about your application, please contact our HR department.</p>
+            <p>Lemi National Cement PLC<br>
+            HR Department<br>
+            hr@leminationalcementplc.com | +251 XXX XXX XXXX</p>
+        </div>
+    </div>
+
+    <script>
+        function generateReferenceNumber() {
+    const now = new Date();
+    
+    // Format: YYMMDDHHmmss (Year-Month-Day-Hour-Minute-Second)
+    const timestamp = 
+        now.getFullYear().toString().slice(-2) + 
+        (now.getMonth() + 1).toString().padStart(2, '0') + 
+        now.getDate().toString().padStart(2, '0') + 
+        now.getHours().toString().padStart(2, '0') + 
+        now.getMinutes().toString().padStart(2, '0') + 
+        now.getSeconds().toString().padStart(2, '0');
+    
+    // Alternative with milliseconds for more uniqueness:
+    // const timestamp = now.getTime().toString().slice(-9);
+    
+    return timestamp;
+}
+
+document.getElementById('reference-number').textContent = generateReferenceNumber();
+        // Store submission in localStorage
+        localStorage.setItem('applicationSubmitted', new Date().toISOString());
+    </script>
+</body>
+</html>
